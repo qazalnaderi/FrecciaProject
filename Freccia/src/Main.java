@@ -65,6 +65,7 @@ public class Main extends PApplet {
                 count = 0;
             }
         }
+        checkCrushedWithKnights();
 
 
 
