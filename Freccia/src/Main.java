@@ -12,7 +12,8 @@ public class Main extends PApplet {
     public static PImage injuredKnight2;
     public static PImage arrow;
     public static PImage quiver;
-
+    
+    int startTime ;
     private static int count=0;
     private static int countExtra=0;
     static int arrowSpeed=5;
@@ -82,6 +83,12 @@ public class Main extends PApplet {
         //TODO add text and rect
         checkCrushedWithExtra();
 
+        int elapsedTime = millis() - startTime;
+        int seconds = elapsedTime / 1000;
+        int minutes = seconds / 60;
+        textSize(20);
+        text("Time Played: "+minutes+":"+ seconds,50,690);
+
 
 
     }
@@ -107,7 +114,7 @@ public class Main extends PApplet {
 
 
     public void checkCrushedWithKnights() {
-//        Two loops for checking each item X,Y
+    //Two loops for checking each item X,Y
         for (int i=0;i<Main.arrows.size();i++) {
             for(int j=0;j<Main.knights.size();j++){
                 if (Main.arrows.get(i).X+15 >= Main.knights.get(j).X && Main.arrows.get(i).getX()+15 <= Main.knights.get(j).getX() + 45 &&
