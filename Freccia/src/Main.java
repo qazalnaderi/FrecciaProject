@@ -12,6 +12,7 @@ public class Main extends PApplet {
     public static PImage arrow;
     public static PImage bow;
     public static PImage quiver;
+    public static PImage finalBoss;
 
     int startTime ;
     private static int count=0;
@@ -36,6 +37,7 @@ public class Main extends PApplet {
         bow = loadImage("bow.png");
         arrow = loadImage("arrow.png");
         quiver=loadImage("quiver.png");
+        finalBoss=loadImage("finalBoss.png");
 
         Enemy enemy = new Enemy(null, 0, 0, 0);
         enemy.makeKnights();
