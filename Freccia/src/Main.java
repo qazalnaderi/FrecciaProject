@@ -15,6 +15,7 @@ public class Main extends PApplet {
     private static int count=0;
     static int arrowSpeed=5;
     static int arrowNumbers=10;
+    public static int scoreNumber = 0;
 
     public static ArrayList<Enemy> knights = new ArrayList<>();
     public static ArrayList<Arrow> arrows = new ArrayList<>();
@@ -49,7 +50,7 @@ public class Main extends PApplet {
         Arrow.showArrow(arrows);
         Arrow.moveArrow(arrowSpeed);
         if (arrowNumbers == 0)
-            //TODO lost();
+             lost();
         if (keyPressed){
             if (shoot){
                 Arrow arrow = new Arrow(mouseX, 0);
@@ -101,6 +102,24 @@ public class Main extends PApplet {
                 }
             }
         }
+    }
+
+    public void lost() {
+        //TODO Change this
+        //TODO add return options
+        background(0, 0, 0);
+        fill(194, 47, 27);
+        textSize(50);
+        text("GAME OVER", 125, 200);
+        fill(250, 147, 37);
+        textSize(35);
+        text("Final Score: " + scoreNumber, 145, 330);
+        //Move the time formula to draw and do sth else about it
+
+        text("Return to menu", 130, 450);
+        text("Exit", 215, 570);
+
+        //TODO add mouse-clicked methode for checking this
     }
 
 
