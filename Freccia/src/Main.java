@@ -79,6 +79,9 @@ public class Main extends PApplet {
         }
         checkCrushedWithKnights();
 
+        //TODO add text and rect
+        checkCrushedWithExtra();
+
 
 
     }
@@ -122,6 +125,15 @@ public class Main extends PApplet {
                     }
                     break;
                 }
+            }
+        }
+    }
+    //    Collect scores by catching extras and also make them disappear
+    public void checkCrushedWithExtra() {
+        for (int i=0 ; i<Main.extras.size() ; i++) {
+            if (Main.extras.get(i).X - mouseX < 15 && mouseX -  Main.extras.get(i).X < 15 && Main.extras.get(i).Y > 535 && Main.extras.get(i).Y < 630){
+                Main.extras.remove(Main.extras.get(i));
+                arrowNumbers+=10;
             }
         }
     }
