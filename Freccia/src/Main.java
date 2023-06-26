@@ -43,7 +43,7 @@ public class Main extends PApplet {
         Enemy enemy = new Enemy(null, 0, 0, 0);
         enemy.makeKnights();
         Enemy enemy2=new Enemy(null,0,0,0);
-        enemy2.makeFinalBoss();
+        //TODO add finalboss to enemy class
 
 
         Extra extra=new Extra(0,0,null);
@@ -55,51 +55,68 @@ public class Main extends PApplet {
     public void settings() {
         size(500, 700);
     }
+    boolean menu = true;
+    boolean game = false;
+    boolean win = false;
+    boolean lost = false;
+    boolean setting = false;
+    boolean score = false;
     @Override
     public void draw() {
-        moveKnights();
-        for (Enemy e : knights) {
-            showKnights(e.getImage(), e.getX(), e.getY());
-        }
-        moveExtra();
-        for (Extra a : extras) {
-            showExtra(a.getImage(), a.getX(), a.getY());
-        }
+        if (game) {
+            background(255);
+            if (knights.size()==0){
+                moveFinalBoss();
+                showFinalBoss(horseRider.getImage(), horseRider.getX(), horseRider.getY());
+                checkCrushedWithHorseRider();
 
-        Arrow.showArrow(arrows);
-        Arrow.moveArrow(arrowSpeed);
-        if (arrowNumbers == 0)
-             lost();
-        if (keyPressed){
-            if (shoot){
-                Arrow arrow = new Arrow(mouseX, 0);
-                arrow.makeArrow();
-                Arrow.arrowFace();
-                arrowNumbers--;
             }
-            shoot = false;
-            count++;
-            if (count == 10) {
-                shoot = true;
-                count = 0;
+            if (knights.size() > 0 && knights.get(0).getY() >= 600) {
+                knights.remove(0);
             }
-        }
-        checkCrushedWithKnights();
+            if (arrowNumbers == 0) lost();
+            moveKnights();
+            for (Enemy e : knights) {
+                showKnights(e.getImage(), e.getX(), e.getY());
+            }
+            moveExtra();
+            for (Extra a : extras) {
+                showExtra(a.getImage(), a.getX(), a.getY());
+            }
+            Arrow.showArrow(arrows);
+            Arrow.moveArrow(arrowSpeed);
+            if (keyPressed) {
+                if (shoot) {
+                    Arrow arrow = new Arrow(mouseX, 0);
+                    arrow.makeArrow();
+                    Arrow.arrowFace();
+                    arrowNumbers--;
+                }
+                shoot = false;
+                count++;
+                if (count == 10) {
+                    shoot = true;
+                    count = 0;
+                }
+            }
 
-        int bowX = mouseX;
-        if (bowX > 435) bowX = 435;
-        image(bow, bowX, 565);
-        fill(0);
-        rect(0, 630, 500, 700);
-        checkCrushedWithExtra();
-        fill(255);
-        text("Number Of Arrows:" + arrowNumbers, 300, 660);
-        text("Score: " + scoreNumber, 50, 660);
-        int elapsedTime = millis() - startTime;
-        int seconds = elapsedTime / 1000;
-        int minutes = seconds / 60;
-        textSize(20);
-        text("Time Played: "+minutes+":"+ seconds,50,690);
+            checkCrushedWithKnights();
+
+            int bowX = mouseX;
+            if (bowX > 435) bowX = 435;
+            image(bow, bowX, 565);
+            fill(0);
+            rect(0, 630, 500, 700);
+            checkCrushedWithExtra();
+            fill(255);
+            text("Number Of Arrows:" + arrowNumbers, 300, 660);
+            text("Score: " + scoreNumber, 50, 660);
+            int elapsedTime = millis() - startTime;
+            int seconds = elapsedTime / 1000;
+            int minutes = seconds / 60;
+            textSize(20);
+            text("Time Played: "+minutes+":"+ seconds,50,690);
+        }
 
 
 
