@@ -39,6 +39,9 @@ public class Main extends PApplet {
         Enemy enemy = new Enemy(null, 0, 0, 0);
         enemy.makeKnights();
 
+        Extra extra=new Extra(0,0,null);
+        extra.makeExtra();
+
 
     }
     @Override
@@ -50,6 +53,10 @@ public class Main extends PApplet {
         moveKnights();
         for (Enemy e : knights) {
             showKnights(e.getImage(), e.getX(), e.getY());
+        }
+        moveExtra();
+        for (Extra a : extras) {
+            showExtra(a.getImage(), a.getX(), a.getY());
         }
 
         Arrow.showArrow(arrows);
@@ -85,6 +92,16 @@ public class Main extends PApplet {
     public void showKnights(PImage image, int X, int Y) {
         image(image, X, Y);
     }
+    public void moveExtra() {
+        for (Extra a : extras) {
+            a.setY(a.getY() + 2);
+        }
+    }
+    public void showExtra(PImage image, int X, int Y) {
+        image(image, X, Y);
+    }
+
+
 
     public void checkCrushedWithKnights() {
 //        Two loops for checking each item X,Y
