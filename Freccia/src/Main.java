@@ -82,9 +82,15 @@ public class Main extends PApplet {
         }
         checkCrushedWithKnights();
 
-        //TODO add text and rect
+        int bowX = mouseX;
+        if (bowX > 435) bowX = 435;
+        image(bow, bowX, 565);
+        fill(0);
+        rect(0, 630, 500, 700);
         checkCrushedWithExtra();
-
+        fill(255);
+        text("Number Of Arrows:" + arrowNumbers, 300, 660);
+        text("Score: " + scoreNumber, 50, 660);
         int elapsedTime = millis() - startTime;
         int seconds = elapsedTime / 1000;
         int minutes = seconds / 60;
