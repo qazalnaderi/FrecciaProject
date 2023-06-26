@@ -13,17 +13,21 @@ public class Main extends PApplet {
     public static PImage arrow;
 
     public static ArrayList<Enemy> knights = new ArrayList<>();
+    public static ArrayList<Arrow> arrows = new ArrayList<>();
 
     public static void main(String[] args) {PApplet.main("Main", args);}
     @Override
     public void setup() {
         processing = this;
+        pApplet = this;
         knight = loadImage("knight.png");
         injuredKnight = loadImage("injured-knight.png");
         knight2 = loadImage("knight2.png");
+        arrow = loadImage("arrow.png");
 
         Enemy enemy = new Enemy(null, 0, 0, 0);
         enemy.makeKnights();
+
     }
     @Override
     public void settings() {
