@@ -13,6 +13,7 @@ public class Main extends PApplet {
     public static PImage bow;
     public static PImage quiver;
     public static PImage finalBoss;
+    public static Enemy horseRider;
 
     int startTime ;
     private static int count=0;
@@ -41,6 +42,9 @@ public class Main extends PApplet {
 
         Enemy enemy = new Enemy(null, 0, 0, 0);
         enemy.makeKnights();
+        Enemy enemy2=new Enemy(null,0,0,0);
+        enemy2.makeFinalBoss();
+
 
         Extra extra=new Extra(0,0,null);
         extra.makeExtra();
@@ -151,6 +155,12 @@ public class Main extends PApplet {
                 arrowNumbers+=10;
             }
         }
+    }
+    public void moveFinalBoss(){
+        horseRider.setY(horseRider.getY()+1);
+    }
+    public void showFinalBoss(PImage image,int X,int Y){
+        image(image,X,Y);
     }
 
     public void lost() {
