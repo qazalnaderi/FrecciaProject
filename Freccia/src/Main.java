@@ -11,14 +11,17 @@ public class Main extends PApplet {
     public static PImage injuredKnight;
     public static PImage injuredKnight2;
     public static PImage arrow;
+    public static PImage quiver;
 
     private static int count=0;
+    private static int countExtra=0;
     static int arrowSpeed=5;
     static int arrowNumbers=10;
     public static int scoreNumber = 0;
 
     public static ArrayList<Enemy> knights = new ArrayList<>();
     public static ArrayList<Arrow> arrows = new ArrayList<>();
+    public static ArrayList<Extra> extras = new ArrayList<>();
 
     private static boolean shoot=true;
 
@@ -31,9 +34,11 @@ public class Main extends PApplet {
         injuredKnight = loadImage("injured-knight.png");
         knight2 = loadImage("knight2.png");
         arrow = loadImage("arrow.png");
+        quiver=loadImage("quiver.png");
 
         Enemy enemy = new Enemy(null, 0, 0, 0);
         enemy.makeKnights();
+
 
     }
     @Override

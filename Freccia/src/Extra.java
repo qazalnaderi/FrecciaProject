@@ -12,6 +12,17 @@ public class Extra {
         this.image = image;
     }
 
+    public void makeExtra(){
+        for (int i=0;i<20;i++){
+            Main.extras.add(new Extra(X+120,Y-100,Main.quiver));
+            Y-=300;
+            Main.extras.add(new Extra(X+200,Y-100,Main.quiver));
+            Y-=150;
+            Main.extras.add(new Extra(X+400,Y-100,Main.quiver));
+            Y-=400;
+        }
+    }
+
     public int getX() {
         return X;
     }
@@ -35,5 +46,5 @@ public class Extra {
     public void setImage(PImage image) {
         this.image = image;
     }
-    
+
 }
