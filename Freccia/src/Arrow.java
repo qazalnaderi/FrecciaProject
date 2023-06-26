@@ -13,6 +13,10 @@ public class Arrow {
         this.X = X;
         this.Y = Y;
     }
+    public void makeArrow() {
+        Main.arrows.add(new Arrow(pApplet.mouseX,520));
+    }
+
 
 
 }
