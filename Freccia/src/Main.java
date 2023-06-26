@@ -91,12 +91,11 @@ public class Main extends PApplet {
                         Main.arrows.remove(Main.arrows.get(i));
                         knights.get(j).setImage(injuredKnight2);
                         knights.get(j).setResistance(1);
-                        //TODO add score
-                    } else if (knights.get(j).getResistance()==1){
+                        scoreNumber++;                    }
+                    else if (knights.get(j).getResistance()==1){
                         Main.arrows.remove(Main.arrows.get(i));
                         Main.knights.remove(Main.knights.get(j));
-                        //TODO add score
-
+                        scoreNumber++;
                     }
                     break;
                 }
