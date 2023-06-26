@@ -1,3 +1,6 @@
+import processing.core.PApplet;
+import processing.core.PImage;
+
 public class Enemy {
     private static PApplet p = Main.processing;
     public int X;

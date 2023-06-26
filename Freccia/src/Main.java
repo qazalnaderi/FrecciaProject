@@ -30,12 +30,20 @@ public class Main extends PApplet {
     @Override
     public void draw() {
         moveKnights();
+        for (Enemy e : knights) {
+            showKnights(e.getImage(), e.getX(), e.getY());
+        }
+
     }
 
     public void moveKnights() {
         for (Enemy e : knights) {
             e.setY(e.getY() + 2);
         }
+    }
+
+    public void showKnights(PImage image, int X, int Y) {
+        image(image, X, Y);
     }
 
 
