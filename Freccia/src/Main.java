@@ -43,7 +43,7 @@ public class Main extends PApplet {
         Enemy enemy = new Enemy(null, 0, 0, 0);
         enemy.makeKnights();
         Enemy enemy2=new Enemy(null,0,0,0);
-        //TODO add finalboss to enemy class
+        enemy2.makeFinalBoss();
 
 
         Extra extra=new Extra(0,0,null);
@@ -59,8 +59,6 @@ public class Main extends PApplet {
     boolean game = false;
     boolean win = false;
     boolean lost = false;
-    boolean setting = false;
-    boolean score = false;
     @Override
     public void draw() {
         if (game) {
@@ -116,6 +114,13 @@ public class Main extends PApplet {
             int minutes = seconds / 60;
             textSize(20);
             text("Time Played: "+minutes+":"+ seconds,50,690);
+        }
+        if (win) {
+           //TODO win();
+        }
+
+        if (lost) {
+            lost();
         }
 
 

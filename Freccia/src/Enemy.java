@@ -40,6 +40,9 @@ public class Enemy {
             else X-=100;
         }
     }
+    public void makeFinalBoss(){
+        Main.horseRider = new Enemy(Main.finalBoss,200,Y-100,20);
+    }
 
     public int getX() {
         return X;
