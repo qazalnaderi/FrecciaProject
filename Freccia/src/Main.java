@@ -11,8 +11,9 @@ public class Main extends PApplet {
     public static PImage injuredKnight;
     public static PImage injuredKnight2;
     public static PImage arrow;
+    public static PImage bow;
     public static PImage quiver;
-    
+
     int startTime ;
     private static int count=0;
     private static int countExtra=0;
@@ -34,6 +35,7 @@ public class Main extends PApplet {
         knight = loadImage("knight.png");
         injuredKnight = loadImage("injured-knight.png");
         knight2 = loadImage("knight2.png");
+        bow = loadImage("bow.png");
         arrow = loadImage("arrow.png");
         quiver=loadImage("quiver.png");
 
