@@ -11,6 +11,32 @@ public class Enemy {
         this.Y=Y;
         this.resistance=resistance;
     }
-    
+
+    public void makeKnights(){
+        for (int i=0;i<2;i++){
+
+            if(i%6==0) {
+                Main.knights.add(new Enemy(Main.knight2, X + 30, Y-100,2));
+                Y -= 100;
+            }
+            else{
+                Main.knights.add(new Enemy(Main.knight, X + 30, Y-100,1));
+                Y -= 100;
+            }
+            if (i%4==0){
+                Main.knights.add(new Enemy(Main.knight2,X+300,Y-60,2));
+                Y-=100;
+            }
+            else{
+                Main.knights.add(new Enemy(Main.knight,X+300,Y-60,1));
+                Y-=100;
+            }
+
+            if(i%2==0)
+                X+=100;
+            else X-=100;
+        }
+    }
+
 
 }
