@@ -163,6 +163,26 @@ public class Main extends PApplet {
         image(image,X,Y);
     }
 
+    public void checkCrushedWithHorseRider(){
+        for (int i=0 ; i<Main.arrows.size() ; i++) {
+            if (Main.arrows.get(i).X+25 >= Main.horseRider.X && Main.arrows.get(i).getX()+15 <= Main.horseRider.X + 124 &&
+                    Main.arrows.get(i).Y >= Main.horseRider.Y && Main.arrows.get(i).Y <= Main.horseRider.Y + 124) {
+                Main.arrows.remove(Main.arrows.get(i));
+                if (Main.horseRider.getResistance() == 0) {
+                    game = false;
+                    win = true;
+                    break;
+                } else {
+                    Main.horseRider.setResistance(Main.horseRider.getResistance() - 1);
+                }
+            }
+        }
+        if (Main.horseRider.Y >= 510) {
+            game = false;
+            lost = true;
+        }
+    }
+
     public void lost() {
         //TODO Change this
         //TODO add return options
