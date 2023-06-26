@@ -20,6 +20,26 @@ public class Arrow {
         image = Main.pApplet.loadImage("arrow.png");
     }
 
+    public static void showArrow(ArrayList<Arrow> knives) {
+        for (Arrow arrow : knives) {
+            Main.pApplet.image(image, arrow.getX(), arrow.getY(),45,45);
+        }
+    }
+
+    public static void moveArrow(int speedY) {
+        for (Arrow arrow : Main.arrows) {
+            arrow.Y -= speedY;
+        }
+    }
+
+    public int getX() {
+        return X ;
+    }
+
+    public int getY() {
+        return Y;
+    }
+
 
 
 }

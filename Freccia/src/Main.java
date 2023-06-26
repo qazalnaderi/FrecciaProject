@@ -12,8 +12,12 @@ public class Main extends PApplet {
     public static PImage injuredKnight2;
     public static PImage arrow;
 
+    private static int count=0;
+
     public static ArrayList<Enemy> knights = new ArrayList<>();
     public static ArrayList<Arrow> arrows = new ArrayList<>();
+
+    private static boolean shoot=true;
 
     public static void main(String[] args) {PApplet.main("Main", args);}
     @Override
@@ -39,11 +43,23 @@ public class Main extends PApplet {
         for (Enemy e : knights) {
             showKnights(e.getImage(), e.getX(), e.getY());
         }
+
+        Arrow.showArrow(arrows);
+        Arrow.moveArrow(arrowSpeed);
         if (keyPressed){
-            Arrow arrow = new Arrow(mouseX, 0);
-            arrow.makeArrow();
-            Arrow.arrowFace();
+            if (shoot){
+                Arrow arrow = new Arrow(mouseX, 0);
+                arrow.makeArrow();
+                Arrow.arrowFace();
+            }
+            shoot = false;
+            count++;
+            if (count == 10) {
+                shoot = true;
+                count = 0;
+            }
         }
+
 
 
     }
