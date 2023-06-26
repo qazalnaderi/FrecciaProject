@@ -1,6 +1,5 @@
 import processing.core.PApplet;
 import processing.core.PImage;
-
 import java.util.ArrayList;
 
 public class Main extends PApplet {
@@ -16,7 +15,6 @@ public class Main extends PApplet {
 
     int startTime ;
     private static int count=0;
-    private static int countExtra=0;
     static int arrowSpeed=5;
     static int arrowNumbers=10;
     public static int scoreNumber = 0;
