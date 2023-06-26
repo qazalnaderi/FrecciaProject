@@ -39,8 +39,12 @@ public class Main extends PApplet {
         for (Enemy e : knights) {
             showKnights(e.getImage(), e.getX(), e.getY());
         }
-        Arrow arrow = new Arrow(mouseX, 0);
-        arrow.makeArrow();
+        if (keyPressed){
+            Arrow arrow = new Arrow(mouseX, 0);
+            arrow.makeArrow();
+            Arrow.arrowFace();
+        }
+
 
     }
 

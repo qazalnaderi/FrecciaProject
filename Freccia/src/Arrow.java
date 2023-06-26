@@ -16,6 +16,9 @@ public class Arrow {
     public void makeArrow() {
         Main.arrows.add(new Arrow(pApplet.mouseX,520));
     }
+    public static void arrowFace() {
+        image = Main.pApplet.loadImage("arrow.png");
+    }
 
 
 
