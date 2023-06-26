@@ -28,8 +28,16 @@ public class Main extends PApplet {
         size(500, 700);
     }
     @Override
-    public void draw() {}
-    
+    public void draw() {
+        moveKnights();
+    }
+
+    public void moveKnights() {
+        for (Enemy e : knights) {
+            e.setY(e.getY() + 2);
+        }
+    }
+
 
 
 
