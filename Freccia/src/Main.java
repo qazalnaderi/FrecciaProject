@@ -5,10 +5,12 @@ import java.util.ArrayList;
 
 public class Main extends PApplet {
     public static PApplet processing;
+    public static PApplet pApplet;
     public static PImage knight;
     public static PImage knight2;
     public static PImage injuredKnight;
     public static PImage injuredKnight2;
+    public static PImage arrow;
 
     public static ArrayList<Enemy> knights = new ArrayList<>();
 
